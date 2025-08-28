@@ -14,8 +14,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD7CCD932E5DBB2F002865DA /* Fit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Fit.app; path = "/Users/drolllted/Desktop/Xcode/Fit/build/Debug-iphoneos/Fit.app"; sourceTree = "<absolute>"; };
 		DD7CCDC92E6077E7002865DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DD7CCDCB2E6078E1002865DA /* Fit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -45,6 +45,7 @@
 			children = (
 				DD7CCD952E5DBB2F002865DA /* Fit */,
 				DD7CCDC92E6077E7002865DA /* GoogleService-Info.plist */,
+				DD7CCDCB2E6078E1002865DA /* Fit.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,7 +74,7 @@
 				DD7CCDC72E6063CB002865DA /* FirebaseFirestore */,
 			);
 			productName = Fit;
-			productReference = DD7CCD932E5DBB2F002865DA /* Fit.app */;
+			productReference = DD7CCDCB2E6078E1002865DA /* Fit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

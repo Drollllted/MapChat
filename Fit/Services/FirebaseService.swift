@@ -16,24 +16,52 @@ final class FirebaseService: ObservableObject {
     
     //MARK: - Sign Up
     
-    func createUser(email: String, password: String) async {
-        do {
-            let authUser = try await auth.createUser(withEmail: email, password: password)
-            await storeUserFirebaseStorage(uid: authUser.user.uid, email: email, fullName: password)
-        } catch {
-            print(error.localizedDescription)
-        }
+    func createUser(email: String, password: String) async throws -> FirebaseModel {
+        let authUser = try await auth.createUser(withEmail: email, password: password)
+        return FirebaseModel(user: authUser.user)
     }
     
-    func storeUserFirebaseStorage(uid: String, email: String, fullName: String) async {
-        let user = User(uid: uid, email: email, fullName: fullName)
-        do {
-            try firestore.collection("users").document(uid).setData(from: user)
-        } catch {
-            print(error.localizedDescription)
+    //MARK: - Get Auth User
+    
+    func getAuthUser() throws -> FirebaseModel {
+        guard let user = auth.currentUser else {
+            throw URLError(.badURL)
         }
+        
+        return FirebaseModel(user: user)
+        
     }
     
     //MARK: - Sign In
+    
+    func signIn(email: String, password: String) async throws -> FirebaseModel {
+        let signInUser = try await auth.signIn(withEmail: email, password: password)
+        return FirebaseModel(user: signInUser.user)
+    }
+    
+    //MARK: - Reset Password
+    
+    func resetPassword(password: String) throws {
+        guard let user = auth.currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        user.updatePassword(to: password)
+    }
+    
+    //MARK: - Update Email
+    
+    func resetEmail(email: String) throws {
+        guard let user = auth.currentUser else {
+            throw URLError(.unknown)
+        }
+        user.sendEmailVerification(beforeUpdatingEmail: email)
+    }
+    
+    //MARK: - Sign Out
+    
+    func signOut() throws {
+        try auth.signOut()
+    }
+    
     
 }
