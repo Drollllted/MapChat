@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
-final class FirebaseSerivce: ObservableObject {
+final class FirebaseService: ObservableObject {
     
     private let auth = Auth.auth()
     private let firestore = Firestore.firestore()

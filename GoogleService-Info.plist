@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.drollllted.chatApp</string>
+	<string>com.drollllted.Fit</string>
 	<key>PROJECT_ID</key>
 	<string>chatapp-ba4b3</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:8957056607:ios:08d1379525abd621f0edea</string>
+	<string>1:8957056607:ios:e9a32f322633286cf0edea</string>
 </dict>
 </plist>

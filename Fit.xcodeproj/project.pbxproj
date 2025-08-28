@@ -10,10 +10,12 @@
 		DD7CCDA62E605940002865DA /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DD7CCDA52E605940002865DA /* FirebaseCore */; };
 		DD7CCDC62E6063C2002865DA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DD7CCDC52E6063C2002865DA /* FirebaseAuth */; };
 		DD7CCDC82E6063CB002865DA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD7CCDC72E6063CB002865DA /* FirebaseFirestore */; };
+		DD7CCDCA2E6077E7002865DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD7CCDC92E6077E7002865DA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD7CCD932E5DBB2F002865DA /* Fit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7CCD932E5DBB2F002865DA /* Fit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Fit.app; path = "/Users/drolllted/Desktop/Xcode/Fit/build/Debug-iphoneos/Fit.app"; sourceTree = "<absolute>"; };
+		DD7CCDC92E6077E7002865DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -42,16 +44,8 @@
 			isa = PBXGroup;
 			children = (
 				DD7CCD952E5DBB2F002865DA /* Fit */,
-				DD7CCD942E5DBB2F002865DA /* Products */,
+				DD7CCDC92E6077E7002865DA /* GoogleService-Info.plist */,
 			);
-			sourceTree = "<group>";
-		};
-		DD7CCD942E5DBB2F002865DA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DD7CCD932E5DBB2F002865DA /* Fit.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,7 +104,7 @@
 				DD7CCDA32E6054AF002865DA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = DD7CCD942E5DBB2F002865DA /* Products */;
+			productRefGroup = DD7CCD8A2E5DBB2F002865DA;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -124,6 +118,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7CCDCA2E6077E7002865DA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +273,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Drolllted.Fit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drollllted.Fit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -305,7 +300,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Drolllted.Fit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.drollllted.Fit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
