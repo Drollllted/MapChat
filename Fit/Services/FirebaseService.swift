@@ -9,10 +9,15 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
-final class FirebaseService: ObservableObject {
+final class FirebaseService {
+    
+    static let shared = FirebaseService()
+    private init(){}
     
     private let auth = Auth.auth()
     private let firestore = Firestore.firestore()
+    
+    
     
     //MARK: - Sign Up
     

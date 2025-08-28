@@ -9,18 +9,12 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @StateObject private var firebaseSetvice = FirebaseService()
-    
-    // States for text fields
-    @State private var fullName: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
+    @StateObject private var vm = SignUpViewModel()
     
     var body: some View {
         ZStack {
             // MARK: - Background
-            Color(UIColor(red: 0.97, green: 0.98, blue: 0.99, alpha: 1.00)) // #F7F9FC
+            Color(UIColor(red: 0.97, green: 0.98, blue: 0.99, alpha: 1.00))
                 .ignoresSafeArea()
             
             ScrollView {
@@ -32,12 +26,12 @@ struct SignUpView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 60, height: 60)
-                            .foregroundColor(Color(red: 0.36, green: 0.55, blue: 1.00)) // #5B8CFF
+                            .foregroundColor(Color(red: 0.36, green: 0.55, blue: 1.00))
                         
                         Text("Присоединяйтесь!")
                             .font(.title2)
                             .fontWeight(.semibold)
-                            .foregroundColor(Color(red: 0.18, green: 0.22, blue: 0.28)) // #2D3748
+                            .foregroundColor(Color(red: 0.18, green: 0.22, blue: 0.28))
                         
                         Text("Создайте аккаунт, чтобы начать путешествие.")
                             .font(.subheadline)
@@ -47,16 +41,16 @@ struct SignUpView: View {
                     
                     // MARK: - Form Fields
                     VStack(spacing: 16) {
-                        CustomTextField(icon: "person", placeholder: "Полное имя", text: $fullName)
-                        CustomTextField(icon: "envelope", placeholder: "Email адрес", text: $email, keyboardType: .emailAddress)
-                        CustomSecureField(icon: "lock", placeholder: "Пароль", text: $password)
-                        CustomSecureField(icon: "lock.fill", placeholder: "Подтвердите пароль", text: $confirmPassword)
+                        CustomTextField(icon: "person", placeholder: "Полное имя", text: $vm.fullName)
+                        CustomTextField(icon: "envelope", placeholder: "Email адрес", text: $vm.email, keyboardType: .emailAddress)
+                        CustomSecureField(icon: "lock", placeholder: "Пароль", text: $vm.password)
+                        CustomSecureField(icon: "lock.fill", placeholder: "Подтвердите пароль", text: $vm.confirmPassword)
                     }
                     
                     // MARK: - Sign Up Button
                     Button(action: {
                         Task {
-                            await firebaseSetvice.createUser(email: email, password: password)
+                            vm.setupNewUser()
                         }
                     }) {
                         HStack {
@@ -69,7 +63,7 @@ struct SignUpView: View {
                     }
                     .background(
                         RoundedRectangle(cornerRadius: 12)
-                            .fill(Color(red: 0.36, green: 0.55, blue: 1.00)) // #5B8CFF
+                            .fill(Color(red: 0.36, green: 0.55, blue: 1.00))
                     )
                     .padding(.top, 8)
                     
