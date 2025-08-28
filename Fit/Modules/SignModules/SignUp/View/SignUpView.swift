@@ -134,6 +134,7 @@ struct CustomSecureField: View {
                 .foregroundColor(Color(red: 0.44, green: 0.50, blue: 0.59)) // #718096
                 .frame(width: 20)
             TextField(placeholder, text: $text)
+                
         }
         .padding()
         .background(
