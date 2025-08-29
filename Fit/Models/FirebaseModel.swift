@@ -18,7 +18,7 @@ struct FirebaseModel: Codable {
     init(user: User) {
         self.uid = user.uid
         self.email = user.email
-        self.fullName = user.displayName ?? ""
+        self.fullName = user.displayName
         //self.nameTag = user.
         self.imageURL = user.photoURL?.description
     }
