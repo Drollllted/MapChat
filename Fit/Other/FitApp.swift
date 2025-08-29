@@ -23,7 +23,7 @@ struct FitApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SignInView()
+                MapView()
             }
         }
     }

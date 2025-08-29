@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @StateObject private var vm = SignUpViewModel()
+    @StateObject private var vm = AuthViewModel()
     
     var body: some View {
         ZStack {
@@ -41,7 +41,7 @@ struct SignUpView: View {
                     
                     // MARK: - Form Fields
                     VStack(spacing: 16) {
-                        CustomTextField(icon: "person", placeholder: "Полное имя", text: $vm.fullName)
+                        CustomTextField(icon: "person", placeholder: "Полное имя", text: $vm.name)
                         CustomTextField(icon: "envelope", placeholder: "Email адрес", text: $vm.email, keyboardType: .emailAddress)
                         CustomSecureField(icon: "lock", placeholder: "Пароль", text: $vm.password)
                         CustomSecureField(icon: "lock.fill", placeholder: "Подтвердите пароль", text: $vm.confirmPassword)
@@ -50,7 +50,7 @@ struct SignUpView: View {
                     // MARK: - Sign Up Button
                     Button(action: {
                         Task {
-                            vm.setupNewUser()
+                            vm.signUp()
                         }
                     }) {
                         HStack {
@@ -142,8 +142,3 @@ struct CustomSecureField: View {
     }
 }
 
-#if DEBUG
-#Preview {
-    SignUpView()
-}
-#endif
