@@ -13,9 +13,11 @@ struct ContentView: View {
     var body: some View {
         Group {
             if authViewModel.isAuthenticated, let userId = authViewModel.currentUser?.uid {
-                MapView(userId: userId)
+                MapView(userId: userId).environmentObject(authViewModel)
+                
             } else {
-                SignInView(authViewModel: authViewModel)
+                SignInView()
+                    .environmentObject(authViewModel)
             }
         }
         .onAppear {

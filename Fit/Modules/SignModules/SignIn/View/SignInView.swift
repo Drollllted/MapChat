@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @ObservedObject private var vm = AuthViewModel()
+    @EnvironmentObject private var vm: AuthViewModel
     
     var body: some View {
         ZStack {
@@ -27,6 +27,13 @@ struct SignInView: View {
                 } label: {
                     Text("Let's go")
                 }
+                
+                NavigationLink {
+                    SignUpView()
+                } label: {
+                    Text("Go To Sign Up")
+                }
+
 
             }
         }

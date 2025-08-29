@@ -29,8 +29,6 @@ final class LocationService: NSObject, LocationServiceDelegate {
         super.init()
         locationManager.delegate = self
         locationManager.distanceFilter = 10
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
@@ -54,7 +52,8 @@ extension LocationService: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
-        locationSubject.send(completion: .failure(error.localizedDescription as! Error))
+        
+        print("1234")
     }
     
 }
