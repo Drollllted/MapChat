@@ -37,6 +37,7 @@ final class AuthViewModel: ObservableObject {
     }
     
     func signUp() {
+        guard validateSignUp() else {return}
         isLoading = true
         error = nil
         
@@ -58,6 +59,7 @@ final class AuthViewModel: ObservableObject {
     }
     
     func signIn() {
+        guard validateSignIn() else {return}
         isLoading = true
         error = nil
         

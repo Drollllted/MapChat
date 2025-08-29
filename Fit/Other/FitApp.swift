@@ -17,13 +17,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct FitApp: App {
-    
+    @StateObject private var authViewModel = AuthViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MapView()
+                ContentView()
             }
         }
     }

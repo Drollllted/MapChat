@@ -26,7 +26,7 @@ struct AuthUser: Codable{
 
 // MARK: - Location
 
-struct User: Codable {
+struct User: Codable, Identifiable {
     let id: String
     let email: String
     let name: String

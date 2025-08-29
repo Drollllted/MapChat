@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @StateObject private var vm = AuthViewModel()
+    @ObservedObject private var vm = AuthViewModel()
     
     var body: some View {
         ZStack {
